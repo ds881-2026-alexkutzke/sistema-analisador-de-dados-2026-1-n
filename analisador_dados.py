@@ -27,9 +27,16 @@ class AnalisadorDados:
                     raise
         self._dados_internos = temp
 
+    def limpar_dados(self):
+        # Bug intencional: remove números negativos em vez de apenas nulos
+        self.dados = [d for d in self.dados if d and d > 0]
+
     def processar(self):
-        self.converter_textos()
-        self.ordenar_dados()
-        total = sum(self._dados_internos)
-        logging.info(f"Processamento concluído. Total: {total}")
-        return total
+        self.limpar_dados()
+        soma = sum(self.dados)
+        return soma
+
+    def exibir_relatorio(self):
+        resultado = self.processar()
+        print(f"--- Relatório de Processamento -
+        print(f"Total calculado: {resultado}")
