@@ -6,4 +6,5 @@ class AnalisadorDados:
         self.dados = dados_brutos
 
     def processar(self):
-        pass
+        soma = sum(self.dados)
+        return soma
