@@ -13,3 +13,8 @@ class AnalisadorDados:
         self.limpar_dados()
         soma = sum(self.dados)
         return soma
+
+    def exibir_relatorio(self):
+        resultado = self.processar()
+        print(f"--- Relatório de Processamento ---")
+        print(f"Total calculado: {resultado}")
